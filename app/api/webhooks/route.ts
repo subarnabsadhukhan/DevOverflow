@@ -92,7 +92,7 @@ export async function POST(req: Request) {
     const { id } = evt.data;
 
     const deletedUser = await deleteUser({
-      clerkId: id!,
+      clerkId: id || "",
     });
 
     return NextResponse.json({
@@ -100,6 +100,7 @@ export async function POST(req: Request) {
       user: deletedUser,
     });
   }
-
-  return new Response("Webhook received", { status: 201 });
+  return NextResponse.json({
+    message: "OK",
+  });
 }
