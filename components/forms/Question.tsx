@@ -23,7 +23,7 @@ import { createQuestion } from "@/lib/actions/question.action";
 import { useRouter } from "next/navigation";
 
 const Question = ({ mongoUserId }: { mongoUserId: string }) => {
-  const type = "ask";
+  const type: any = "ask";
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const editorRef = useRef(null);
