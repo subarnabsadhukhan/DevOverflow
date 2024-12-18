@@ -14,6 +14,7 @@ export async function POST(req: Request) {
     );
   }
 
+  console.log("SIGNING_SECRET", SIGNING_SECRET);
   // Create new Svix instance with secret
   const wh = new Webhook(SIGNING_SECRET);
 
